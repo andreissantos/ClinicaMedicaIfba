@@ -28,25 +28,138 @@ public class SistemaClinica extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
+        painelPrincipal = new javax.swing.JPanel();
+        panelCadastrar = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        panelAlterar = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        panelConsultar = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        panelListar = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
-        jMenu3 = new javax.swing.JMenu();
-        jMenu4 = new javax.swing.JMenu();
+        Cadastrar = new javax.swing.JMenu();
+        Alterar = new javax.swing.JMenu();
+        Consultar = new javax.swing.JMenu();
+        Listar = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jMenu1.setText("Cadastrar ▼");
-        jMenuBar1.add(jMenu1);
+        painelPrincipal.setLayout(new java.awt.CardLayout());
 
-        jMenu2.setText("Alterar ▼");
-        jMenuBar1.add(jMenu2);
+        jLabel1.setText("Tela Cadastro");
 
-        jMenu3.setText("Consultar ▼");
-        jMenuBar1.add(jMenu3);
+        javax.swing.GroupLayout panelCadastrarLayout = new javax.swing.GroupLayout(panelCadastrar);
+        panelCadastrar.setLayout(panelCadastrarLayout);
+        panelCadastrarLayout.setHorizontalGroup(
+            panelCadastrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelCadastrarLayout.createSequentialGroup()
+                .addGap(275, 275, 275)
+                .addComponent(jLabel1)
+                .addContainerGap(303, Short.MAX_VALUE))
+        );
+        panelCadastrarLayout.setVerticalGroup(
+            panelCadastrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelCadastrarLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addContainerGap(378, Short.MAX_VALUE))
+        );
 
-        jMenu4.setText("Listar ▼");
-        jMenuBar1.add(jMenu4);
+        painelPrincipal.add(panelCadastrar, "telaCadastro");
+
+        jLabel2.setText("Tela Alterar");
+
+        javax.swing.GroupLayout panelAlterarLayout = new javax.swing.GroupLayout(panelAlterar);
+        panelAlterar.setLayout(panelAlterarLayout);
+        panelAlterarLayout.setHorizontalGroup(
+            panelAlterarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelAlterarLayout.createSequentialGroup()
+                .addGap(282, 282, 282)
+                .addComponent(jLabel2)
+                .addContainerGap(308, Short.MAX_VALUE))
+        );
+        panelAlterarLayout.setVerticalGroup(
+            panelAlterarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelAlterarLayout.createSequentialGroup()
+                .addComponent(jLabel2)
+                .addGap(0, 384, Short.MAX_VALUE))
+        );
+
+        painelPrincipal.add(panelAlterar, "telaAlterar");
+
+        jLabel3.setText("Tela Consultar");
+
+        javax.swing.GroupLayout panelConsultarLayout = new javax.swing.GroupLayout(panelConsultar);
+        panelConsultar.setLayout(panelConsultarLayout);
+        panelConsultarLayout.setHorizontalGroup(
+            panelConsultarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelConsultarLayout.createSequentialGroup()
+                .addGap(276, 276, 276)
+                .addComponent(jLabel3)
+                .addContainerGap(298, Short.MAX_VALUE))
+        );
+        panelConsultarLayout.setVerticalGroup(
+            panelConsultarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelConsultarLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel3)
+                .addContainerGap(378, Short.MAX_VALUE))
+        );
+
+        painelPrincipal.add(panelConsultar, "telaConsultar");
+
+        jLabel4.setText("Tela Listar");
+
+        javax.swing.GroupLayout panelListarLayout = new javax.swing.GroupLayout(panelListar);
+        panelListar.setLayout(panelListarLayout);
+        panelListarLayout.setHorizontalGroup(
+            panelListarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelListarLayout.createSequentialGroup()
+                .addGap(290, 290, 290)
+                .addComponent(jLabel4)
+                .addContainerGap(307, Short.MAX_VALUE))
+        );
+        panelListarLayout.setVerticalGroup(
+            panelListarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelListarLayout.createSequentialGroup()
+                .addComponent(jLabel4)
+                .addGap(0, 384, Short.MAX_VALUE))
+        );
+
+        painelPrincipal.add(panelListar, "telaListar");
+
+        Cadastrar.setText("Cadastrar ▼");
+        Cadastrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CadastrarMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(Cadastrar);
+
+        Alterar.setText("Alterar ▼");
+        Alterar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AlterarMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(Alterar);
+
+        Consultar.setText("Consultar ▼");
+        Consultar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ConsultarMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(Consultar);
+
+        Listar.setText("Listar ▼");
+        Listar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ListarMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(Listar);
 
         setJMenuBar(jMenuBar1);
 
@@ -54,15 +167,39 @@ public class SistemaClinica extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 951, Short.MAX_VALUE)
+            .addComponent(painelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 468, Short.MAX_VALUE)
+            .addComponent(painelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void CadastrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CadastrarMouseClicked
+        // TODO add your handling code here:
+        java.awt.CardLayout cl = (java.awt.CardLayout)(painelPrincipal.getLayout());
+        cl.show(painelPrincipal, "telaCadastro");
+    }//GEN-LAST:event_CadastrarMouseClicked
+
+    private void AlterarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AlterarMouseClicked
+        // TODO add your handling code here:
+        java.awt.CardLayout cl = (java.awt.CardLayout)(painelPrincipal.getLayout());
+        cl.show(painelPrincipal, "telaAlterar");
+    }//GEN-LAST:event_AlterarMouseClicked
+
+    private void ConsultarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ConsultarMouseClicked
+        // TODO add your handling code here:
+        java.awt.CardLayout cl = (java.awt.CardLayout)(painelPrincipal.getLayout());
+        cl.show(painelPrincipal, "telaConsultar");
+    }//GEN-LAST:event_ConsultarMouseClicked
+
+    private void ListarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ListarMouseClicked
+        // TODO add your handling code here:
+        java.awt.CardLayout cl = (java.awt.CardLayout)(painelPrincipal.getLayout());
+        cl.show(painelPrincipal, "telaListar");
+    }//GEN-LAST:event_ListarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -90,11 +227,20 @@ public class SistemaClinica extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu Alterar;
+    private javax.swing.JMenu Cadastrar;
+    private javax.swing.JMenu Consultar;
+    private javax.swing.JMenu Listar;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JPanel painelPrincipal;
+    private javax.swing.JPanel panelAlterar;
+    private javax.swing.JPanel panelCadastrar;
+    private javax.swing.JPanel panelConsultar;
+    private javax.swing.JPanel panelListar;
     // End of variables declaration//GEN-END:variables
 }
